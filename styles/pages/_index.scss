@@ -1,0 +1,41 @@
+.main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  display: grid;
+  grid-template: 1fr / 9.375rem 1fr 9.375rem;
+  justify-content: space-between;
+
+  // // Cool transition effect for themes
+  // transition: 1s ease-in-out !important;
+  // * {
+  //   transition: 1s ease-in-out !important;
+  // }
+
+
+  @include themed() {
+    color: t($color-1);
+    background-color: t($color-4);
+
+    ::selection {
+      color: t($color-4);
+      background: t($color-3);
+    }
+  }
+}
+
+@media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+  .main {
+    grid-template: 1fr / 6.25rem 1fr 6.25rem;
+  }
+}
+
+
+@media (max-width: $breakpoint-1) {
+  .main {
+    grid-template: 1fr / 3.125rem 1fr 3.125rem;
+  }
+}

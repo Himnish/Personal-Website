@@ -1,0 +1,331 @@
+$borderRadius: 0.1875rem;
+
+.project-card {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-auto-rows: min-content;
+
+  &__details,
+  &__details--inverse {
+    grid-row: 1;
+    display: grid;
+    grid-template: auto auto auto auto/1fr;
+    gap: 0.75rem;
+    align-content: center;
+
+    > * {
+      z-index: 2;
+      width: fit-content;
+    }
+  }
+
+  &__details {
+    grid-column: 1 / span 5;
+  }
+
+  &__details--inverse {
+    grid-column: 5 / span 5;
+    justify-items: end;
+
+    .project-card__title {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__details--full-length {
+    grid-column: 1 / span 9;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    font-size: $font-size-6;
+    padding-bottom: 0.3125rem;
+    // gap: 0.9375rem;
+    > * + * {
+      margin: 0 0 0 0.9375rem; // safari
+    }
+    @include themed() {
+      color: t($color-1);
+    }
+    svg {
+      cursor: pointer;
+      transition: $transition-1;
+      width: $font-size-6;
+      height: $font-size-6;
+      &:hover {
+        transform: scale(1.1);
+      }
+      @include themed() {
+        color: t($color-3);
+      }
+    }
+  }
+
+  &__description {
+    padding: 0.625rem;
+    border-radius: $borderRadius;
+    line-height: $line-height;
+    @include themed() {
+      background-color: t($color-5);
+      color: t($color-2);
+    }
+  }
+
+  &__tools {
+    display: flex;
+    // gap: 0.625rem;
+    > * + * {
+      margin: 0 0 0 0.625rem; // safari
+    }
+
+    p {
+      font-size: $font-size-3;
+      @include themed() {
+        color: t($color-2);
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    // gap: 0.9375rem;
+    > * + * {
+      margin: 0 0 0 0.9375rem; // safari
+    }
+    svg {
+      transition: $transition-1;
+      height: $font-size-4;
+      width: $font-size-4;
+      cursor: pointer;
+      @include themed() {
+        color: t($color-1);
+        &:hover {
+          transform: scale(1.1);
+          color: t($color-3);
+        }
+      }
+    }
+  }
+
+  &__image,
+  &__image--inverse {
+    grid-row: 1;
+    border-radius: $borderRadius;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+
+    &--clickable {
+      cursor: pointer;
+    }
+
+    > div {
+      img {
+        height: inherit !important;
+        position: relative !important;
+      }
+    }
+  }
+
+  &__image {
+    grid-column: 5 / span 5;
+  }
+
+  &__image--inverse {
+    grid-column: 1 / span 5;
+  }
+
+  &--compact {
+    margin: -1.5625rem 0;
+  }
+}
+
+@media (max-width: $breakpoint-2) {
+  .project-card {
+    grid-template: auto 1fr / repeat(9, 1fr);
+    &__details,
+    &__details--inverse {
+      grid-row: 2;
+      grid-column: 1 / span 9;
+    }
+
+    &__image,
+    &__image--inverse {
+      grid-row: 1;
+      grid-column: 1 / span 9;
+    }
+
+    &__title {
+      padding: 0.625rem 0 0 0;
+    }
+  }
+}
+
+.project-cards {
+  &__toggle-amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -3.125rem 0;
+
+    button {
+      @include button-default-style;
+      @include themed() {
+        border: 0.0625rem solid t($color-3);
+      }
+      font-weight: normal;
+      font-size: $font-size-3;
+      padding: 0.625rem 0.75rem;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-1) {
+  .project-card {
+    &--compact {
+      margin: 0 !important;
+    }
+  }
+  .project-cards {
+    &__toggle-amount {
+      margin: 0 !important;
+    }
+  }
+}
+
+.project-popover {
+  @include themed() {
+    background-color: t($color-4);
+    border: 0.0625rem solid t($color-3);
+    ::selection {
+      color: t($color-4);
+      background: t($color-3);
+    }
+  }
+  padding: 3.125rem;
+  border-radius: 0.125rem;
+  display: grid;
+  width: 75vw;
+  overflow-x: scroll;
+  max-height: 100vh;
+  align-self: center;
+  justify-self: center;
+  box-sizing: border-box;
+
+  &__close-icon {
+    transition: $transition-2;
+    margin: -2.1875rem -2.1875rem 0 0;
+    cursor: pointer;
+    justify-self: end;
+    @include themed() {
+      color: t($color-1);
+      &:hover {
+        color: t($color-3);
+      }
+    }
+  }
+
+  &__overview {
+    display: grid;
+    grid-template: auto 1fr / 1fr;
+    padding-bottom: 1.25rem;
+  }
+
+  &__heading {
+    font-size: $font-size-7;
+    padding-bottom: 0.3125rem;
+    @include themed() {
+      color: t($color-1);
+    }
+  }
+
+  &__description {
+    padding: 0.625rem 0;
+    line-height: $line-height;
+    @include themed() {
+      color: t($color-2);
+    }
+  }
+
+  &__highlights {
+    display: grid;
+    gap: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  &__highlight {
+    padding-left: 0.9375rem;
+
+    @include themed() {
+      border-left: 0.125rem solid transparentize(t($color-2), 0.8);
+      &--selected {
+        border-left: 0.125rem solid t($color-3);
+
+        .project-popover__title {
+          color: t($color-3);
+
+        }
+      }
+    }
+  }
+
+  &__title {
+    cursor: pointer;
+    transition: $transition-1;
+    @include themed() {
+      color: t($color-2);
+    }
+  }
+
+  &__highlight-details {
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+    column-gap: 0.625rem;
+  }
+
+  &__highlight-text {
+    padding-top: 0.625rem;
+    border-radius: $borderRadius;
+    line-height: $line-height;
+    @include themed() {
+      color: t($color-1);
+    }
+    &--long {
+      grid-column: 1 / span 2;
+    }
+  }
+
+  &__highlight-media {
+    grid-area: 1 / 2 / span 99;
+    > div {
+      position: relative !important;
+      height: 100% !important;
+      max-height: 18.75rem !important;
+      img {
+        height: 100% !important;
+        max-height: 18.75rem !important;
+        position: relative !important;
+        object-fit: contain !important;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-1) {
+  .project-popover {
+    overflow-x: scroll;
+    max-height: inherit;
+    height: calc(100vh - 1.5rem);
+    width: calc(100vw - 1.5rem);
+
+    &__highlight-details {
+      grid-template: auto / 1fr;
+    }
+
+    &__highlight-media {
+      grid-area: inherit !important;
+      padding-top: 0.625rem;
+    }
+  }
+}

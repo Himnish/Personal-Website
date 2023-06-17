@@ -1,0 +1,44 @@
+.section {
+  min-height: 6.25rem;
+
+  &__heading {
+    font-size: $font-size-6;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.9375rem;
+    padding: 0.3125rem 0;
+
+    &--line {
+      width: 100%;
+      height: 0.0625rem;
+      margin-bottom: -0.1875rem;
+      opacity: 0.25;
+      @include themed() {
+        background-color: t($color-2);
+      }
+    }
+  }
+
+  &__contents {
+    padding: 6.25rem 0;
+    display: flex;
+    flex-direction: column;
+    // gap: 6.25rem;
+    > * + * {
+      margin: 6.25rem 0 0 0; // safari
+    }
+  }
+}
+
+@media (max-width: $breakpoint-1) {
+  .section {
+    &__contents {
+      padding: 3.125rem 0;
+      // gap: 3.125rem;
+      > * + * {
+        margin: 3.125rem 0 0 0; // safari
+      }
+    }
+  }
+}

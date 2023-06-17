@@ -1,0 +1,66 @@
+.header {
+  height: max(102vh, 31.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: $font-1;
+  line-height: 1.4;
+  // gap: 1.875rem;
+  > * + * {
+    margin: 1.875rem 0 0 0; // safari
+  }
+
+  &__preheading {
+    @include themed() {
+      color: t($color-3);
+    }
+  }
+
+  &__heading {
+    font-size: $font-size-9;
+    @include themed() {
+      color: t($color-1);
+    }
+  }
+
+  &__subheading {
+    font-size: $font-size-7;
+    @include themed() {
+      color: t($color-2);
+    }
+  }
+
+  &__text {
+    @include themed() {
+      color: t($color-2);
+    }
+  }
+
+  &__cta {
+    button {
+      @include button-default-style;
+      padding: 0.625rem 0.875rem;
+      margin: 1.5625rem 0;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-2) and (max-width: $breakpoint-3) {
+  .header {
+    &__heading {
+      font-size: $font-size-8;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-2) {
+  .header {
+    &__heading {
+      font-size: $font-size-7;
+    }
+
+    &__subheading {
+      font-size: $font-size-6;
+    }
+  }
+}

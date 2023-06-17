@@ -1,0 +1,45 @@
+$color-1: 'color-1';
+$color-2: 'color-2';
+$color-3: 'color-3';
+$color-4: 'color-4';
+$color-5: 'color-5';
+
+$themes: (
+  1: (
+    color-1: $theme-1-color-1,
+    color-2: $theme-1-color-2,
+    color-3: $theme-1-color-3,
+    color-4: $theme-1-color-4,
+    color-5: $theme-1-color-5
+  ),
+  2: (
+    color-1: $theme-2-color-1,
+    color-2: $theme-2-color-2,
+    color-3: $theme-2-color-3,
+    color-4: $theme-2-color-4,
+    color-5: $theme-2-color-5
+  )
+);
+
+@mixin themed() {
+  @each $themeNum, $map in $themes {
+    .theme--#{$themeNum} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $themeNum), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

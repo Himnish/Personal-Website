@@ -1,0 +1,31 @@
+.pdf-viewer {
+  display: flex;
+  justify-content: center;
+
+  &__page {
+    canvas {
+      width: min(100vw - 18.75rem, 46.875rem) !important;
+      height: 100% !important;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+  .pdf-viewer {
+    &__page {
+      canvas {
+        width: min(100vw - 12.5rem, 46.875rem) !important;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-1) {
+ .pdf-viewer {
+    &__page {
+      canvas {
+        width: min(100vw - 6.25rem, 46.875rem) !important;
+      }
+    }
+  }
+}

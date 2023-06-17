@@ -1,0 +1,117 @@
+{
+  "settings": {
+    "sideBarLocation": "right",
+    "projectCards": {
+      "showAlternatingCards": ["WORK", "PROJECTS"],
+      "compactView": ["PROJECTS"]
+    }
+  },
+  "meta": {
+    "title": "Himnish Jain",
+    "description": "A passionate student studying Computer Science, Statistics, and Economics at the University of Illinois at Urbana-Champaign. I am a budding enthusiast interested in software development, data science, and machine learning.",
+    "mobileIcon": "/mobile-icon.png",
+    "favIcon": "/favicon.ico",
+    "language": "en-US",
+    "canonical": "CANONICAL URL",
+    "url": "URL",
+    "twitterHandle": "TWITTER HANDLE"
+  },
+  "social": {
+    "linkedin": "LINKEDIN URL",
+    "github": "GITHUB URL",
+    "instagram": "INSTAGRAM URL",
+    "twitter": "TWITTER URL"
+  },
+  "document": {
+    "fileName": "Himnish-Resume.pdf",
+    "path": "public/docs/Resume_HimnishJain.pdf"
+  },
+  "header": {
+    "preHeading": "Hello, my name is",
+    "heading": "Himnish Jain",
+    "subHeading": "Developer, Analyst, and Student",
+    "text": "I am a student pursuing a dual degree at the University of Illinois at Urbana-Champaign, and a budding enthusiast interested in software development, data science, and machine learning.",
+    "ctaText": "Get In Touch"
+  },
+  "sections": [
+    {
+      "type": "about",
+      "heading": "ABOUT ME"
+    },
+    {
+      "type": "projectCards",
+      "heading": "WORK EXPERIENCES"
+    },
+    {
+      "type": "projectCards",
+      "heading": "PROJECTS"
+    },
+    {
+      "type": "contact",
+      "heading": "CONTACT"
+    }
+  ],
+  "about": {
+    "content": [
+      "I am Himnish Jain, a passionate student studying Computer Science, Statistics, and Economics at the University of Illinois at Urbana-Champaign. I am an adventurous individual fueled by a relentless passion for coding and the exhilarating realms of AI/ML and data science. Armed with a keyboard and an insatiable curiosity, I embark on a thrilling journey through the digital landscapes, chasing the elusive algorithms and untangling the enigma of data.",
+      "As I delve deeper into the mysteries of artificial intelligence, I'm driven by the belief that technology has the power to reshape our world and amplify human potential. Join me as I weave lines of code into elegant solutions, pushing the boundaries of what's possible and charting a course towards an awe-inspiring future. Together, let's unlock the secrets of the digital universe and create a world where imagination meets innovation."
+    ],
+    "image": "public/images/about/AboutMePicture.jpeg"
+  },
+  "projectCards": {
+    "WORK EXPERIENCES": [
+      {
+        "title": "Data Science Intern at Protiviti Global",
+        "description": "During my exciting time as a data science intern at a Protiviti Global, a top consulting firm, I immersed myself in real-world challenges, collaborating with brilliant minds to extract valuable insights from vast datasets. With cutting-edge tools and machine learning algorithms, I tackled complex problems and even got the opportunity to develop a Next Best Action (NBA) predictor using Reinforcement Learning. From solo research sprees to brainstorming sessions, I witnessed the transformative power of data-driven decision-making, leaving an indelible mark on my professional and personal growth. This unforgettable experience fueled my ambition to push the boundaries of data science, leaving me eager to continue making a lasting impact in the dynamic world of business and technology",
+        "tools": ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-Learn", "TensorFlow", "Keras", "PyTorch", "SQL", "Tableau", "Power BI", "Excel", "PowerPoint"],
+        "image": "public/images/projectCards/Protiviti_logo.svg"
+      },
+      {
+        "title": "Java Software Engineering Intern at WovV Technologies",
+        "description": ["Embarking on an exhilarating summer as a Java software engineering intern at WovV Technologies, a cutting-edge SaaS startup, I found myself at the forefront of revolutionizing the retail landscape. With my skills and dedication, I successfully orchestrated the seamless transition of multinational mall corporations to an omnichannel retail strategy. The impact was astounding, with customer retention rates soaring by up to 90%, opening doors to a new era of customer engagement and satisfaction.",
+        
+        "But that was just the beginning. Teaming up with a dynamic group of 25 talented individuals, we embarked on a mission to create an e-commerce platform that could withstand the relentless surge of high traffic during peak times. Through meticulous coding and tireless collaboration, we developed a robust platform that not only stood strong but surpassed expectations, providing an exceptional shopping experience without any major issues.",
+        
+        "In the pursuit of efficiency, I took on the challenge of optimizing the downloading software process for multiple file formats. Armed with problem-solving skills and a passion for innovation, I devised a streamlined solution that slashed processing time by an impressive 30%. This enhancement unlocked new levels of productivity and paved the way for faster and more efficient operations.",
+        
+        "Throughout this transformative internship, I witnessed firsthand the power of technology to reshape industries. The thrill of coding, collaborating, and pushing boundaries left an indelible mark on my professional growth. Fuelled by these accomplishments, I am motivated to continue honing my skills, exploring new frontiers, and making a lasting impact in the world of software engineering."],
+        "tools": ["Java", "Spring Boot", "MySQL", "JavaScript", "HTML", "CSS", "Bootstrap", "Git", "AWS", "Eclipse", "Visual Studio Code", "Microsoft Office"],
+        "image": "public/images/projectCards/WOVV-IA-Logo.png"
+      },
+      {
+        "title": "Business Analytics Intern at NTT",
+        "description": ["Diving into the dynamic world of telecom and cloud data centers as a business analytics intern, I unlocked the untapped potential of Netmagic's HR department. Armed with mySQL wizardry and external APIs, I extracted invaluable insights from three financial quarters' worth of data, painting a vivid picture of trends and opportunities.",
+
+        "Delving deeper, I scrutinized the cost to productivity ratio, unmasking hidden inefficiencies and crafting innovative solutions. By implementing these strategies, I projected a remarkable 10% surge in productivity, catapulting the department to new heights.",
+        
+        "This exhilarating internship showcased the real-world impact of data analytics, propelling my passion to unravel insights and drive meaningful change."],
+        "tools": ["Java", "QlikSense", "mySQL", "Microsoft Office"],
+        "image": "public/images/projectCards/NTT_Logo.jpeg"
+      }
+    ],
+    "PROJECTS": [
+      {
+        "title": "MoodSpot",
+        "description": "MoodSpot is a tool that generates custom playlists for users based on their current mood. Users can take an image of themselves, and our app will find the mood of the user based on the selfie and provide a customized Spotify playlist with the best songs that match their mood.",
+        "tools": ["Dart", "Flutter", "Python", "TensorFlow", "Spotify API", "AWS", "Ruby", "Swift", "Android Studio", "Figma"],
+        "links": {
+          "github": "https://github.com/Himnish/MoodSpot"
+        }
+      },
+      {
+        "title": "UrbanHawx: Facial Detection based Home Security",
+        "description": "This is a facial detection and recognition software which allows the system to distinguish between a safe, registered user and an unknown one, in a live feed. The system uses eye, face and smile detection to analyze and differ between different people. The rectangles around each person's face would have two things, the person's name and confidence rating for that choice. The system also has two modes: a home mode and an away mode, and it allows a person to add their face and name as a registered user in the home mode.",
+        "tools": ["OpenCV", "Python", "C++", "Flask", "HTML", "CSS"],
+        "links": {
+          "github": "https://github.com/Himnish/HackIllinois22-UrbanHawx-FaceRec",
+          "video": "https://youtu.be/JUeDTd6E8_4"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "text": "I'm always excited to make new connections, hear about new ideas, and explore potential opportunities, so please feel free to reach out to me at himnish.jain06@gmail.com or simply click the button below!",
+    "ctaText": "Say Hey!",
+    "email": "himnish.jain06@gmail.com"
+  }
+}

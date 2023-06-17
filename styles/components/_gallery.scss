@@ -1,0 +1,123 @@
+$borderRadius: 0.1875rem;
+
+.gallery {
+  &__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  &__image {
+    cursor: pointer;
+  }
+
+  &__popover {
+    display: flex;
+    > div {
+      display: grid !important;
+      align-items: center;
+      justify-items: center;
+      width: 100vw;
+      height: 100vh;
+      grid-template: 1fr / 1fr;
+      div {
+        padding-top: 0 !important;
+      }
+    }
+
+    img {
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      grid-area: 1 / 1;
+      min-width: inherit !important;
+      min-height: inherit !important;
+      max-width: 100% !important;
+      max-height: 90vh !important;
+      height: auto !important;
+      width: auto !important;
+    }
+  }
+
+  &__arrow {
+    z-index: 15;
+    transition: $transition-1;
+    position: absolute;
+    align-self: center;
+    cursor: pointer;
+    padding: 0.1875rem;
+    margin: 0 1.25rem;
+    @include themed() {
+      color: t($color-1);
+      &:hover {
+        color: t($color-3);
+      }
+    }
+    &--right {
+      right: 0;
+    }
+    &--disabled {
+      display: none;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -3.125rem 0;
+  }
+
+  &__pagination-bubble {
+    transition: $transition-1;
+    cursor: pointer;
+    margin: 0.3125rem;
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    @include themed() {
+      background-color: transparentize(t($color-2), 0.5);
+
+      &--selected {
+        background-color: t($color-3);
+        transform: scale(1.2);
+      }
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-2) {
+  .gallery {
+    &__images {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-1) {
+  .gallery {
+    &__images {
+      gap: 0.625rem;
+    }
+
+    &__popover {
+      > div {
+        width: 90vw;
+        height: 90vh;
+        margin: 5vh 5vw !important;
+      }
+    }
+
+    &__arrow {
+      margin: 0 0.5vw;
+    }
+
+    &__pagination {
+      margin: -1.5625rem 0;
+    }
+  }
+}
+
